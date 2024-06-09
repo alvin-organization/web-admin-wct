@@ -1,0 +1,99 @@
+.admin-left-side {
+  width: 340px;
+  background-color: #302f4e;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  .content-side-menu {
+    padding-left: 10px;
+    padding-right: 10px;
+    .title-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      svg {
+        font-size: 45px;
+        margin-right: 4px;
+      }
+      span {
+        font-size: 35px;
+        text-transform: uppercase;
+        font-family: "Inter", sans-serif;
+      }
+      .dot-point {
+        color: #d80e58;
+        font-size: 45px;
+        margin-left: 5px;
+        margin-top: -7px;
+      }
+    }
+    .underline-highlight {
+      width: 100%;
+      border-bottom: 1px solid #494777;
+    }
+    .title-interface {
+      margin-top: 15px;
+      margin-bottom: 25px;
+      span {
+        color: gray;
+        font-family: "Barlow", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    .left-menu-admin {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin-top: 15px;
+          margin-bottom: 15px;
+          a {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 0.2px;
+            font-family: "Roboto", sans-serif;
+            .text-menu {
+              width: 100%;
+              display: flex;
+              align-items: center;
+            }
+            svg {
+              margin-right: 10px;
+              font-size: 20px;
+            }
+            .pointer-right {
+              svg {
+                font-size: 16px;
+                float: right;
+                margin-right: 0;
+              }
+              display: flex;
+              justify-content: right;
+            }
+          }
+          .active {
+            color: #d80e58 !important;
+          }
+        }
+      }
+    }
+    .bottom-padd {
+      display: block;
+      padding-bottom: 7px !important;
+    }
+    .under-padding {
+      padding-bottom: 1px !important;
+    }
+  }
+}

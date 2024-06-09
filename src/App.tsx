@@ -1,57 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./views/auth/Login";
+import { CoreRoutes } from "./router/route";
+import HomePage from "./views/home";
+import CategoryPage from "./views/category/category";
+import AddEditCategoryPage from "./views/category/add-edit-category";
+import MoviePage from "./views/movie/movie";
+import AddEditMoviePage from "./views/movie/add-edit-movie";
+import "./assets/scss/Default.scss";
+import "./assets/scss/Landing.scss";
+import "./assets/scss/Icons.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index path={CoreRoutes.AUTH} element={<Login />}></Route>
+          <Route path={CoreRoutes.DASHBOARD} element={<HomePage />}></Route>
+          <Route path={CoreRoutes.CATEGORY} element={<CategoryPage />}></Route>
+          <Route
+            path={`${CoreRoutes.CATEGORY}${CoreRoutes.ADD_EDIT_CATEGORY}`}
+            element={<AddEditCategoryPage />}
+          ></Route>
+          <Route path={CoreRoutes.MOVIE} element={<MoviePage />}></Route>
+          <Route
+            path={`${CoreRoutes.MOVIE}${CoreRoutes.ADD_EDIT_MOVIE}`}
+            element={<AddEditMoviePage />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
